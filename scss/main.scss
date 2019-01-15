@@ -1,0 +1,142 @@
+/*short reset css*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*variables*/
+$font: 'Roboto', sans-serif;
+$colorText: #4B3277;
+$colorBackground: #00C4DB;
+
+body {
+  background: url("../images/bg.png");
+  background-repeat: repeat;
+  margin-top: -40px;
+  font-family: $font;
+}
+.team-header {
+  font-size: 3rem;
+  text-align: center;
+  color: $colorText;
+  line-height: 200px;
+}
+.team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  /*team-list*/
+  .team-company ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .team-people {
+      display: flex;
+      position: relative;
+      height: 200px;
+      width: 200px;
+      margin: 10px 15px 150px 15px;
+      text-align: center;
+      list-style: none;
+     i {
+        position: absolute;
+        z-index: 1;
+        top: 5%;
+        left: 75%;
+        text-align: center;
+        color: #fff;
+        background: $colorText;
+        border-radius: 50%;
+        padding: 10px;
+      }
+      .text {
+        background: $colorBackground;
+        border-radius: 50%;
+        img {
+          border-radius: 50%;
+          opacity: 0.3;
+          cursor: pointer;
+        }
+        .team-people-name {
+          margin: 10px 0;
+          color: $colorText;
+        }
+        .team-people-profession {
+          margin-bottom: 5px;
+          color: $colorBackground;
+        }
+        .team-people-city {
+          color: #666;
+        }
+      }
+    }
+  }
+
+  /*SLIDER*/
+  .container {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    opacity: 1;
+    background: #00C4DB;
+    background-repeat: no-repeat;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content:'';
+      background: url("../images/desk_slider.jpeg");
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height:  100%;
+      opacity: 0.5;
+      z-index: 3;
+    }
+    .slider-close,.slider-left, .slider-right {
+      color: #fff;
+      position: absolute;
+      top:1%;
+      left: 93%;
+      font-size: 50px;
+      text-decoration: none;
+      z-index: 4;
+      cursor: pointer;
+    }
+    .slider-left {
+      top: 40%;
+      left: 2%;
+      font-size: 80px;
+    }
+    .slider-right {
+      top: 40%;
+      left: 93%;
+      font-size: 80px;
+    }
+    .slider {
+      z-index: 5;
+      .team-container {
+        width: 600px;
+        height: 200px;
+        border: 2px dashed #bbb;
+        .team-profession, .team-name {
+          text-align: center;
+          color: #fff;
+          margin-top: 50px;
+          font-size: 2rem;
+        }
+        .team-name {
+          margin: 0;
+          font-size: 2.5rem;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+  }
+}
